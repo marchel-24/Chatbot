@@ -28,5 +28,5 @@ Follow these steps to get the bot running on your own server.
 ### 2. Clone the Repository
 
 ```bash
-git clone [https://github.com/marchel-24/Chatbot](https://github.com/marchel-24/Chatbot)
+git clone https://github.com/marchel-24/Chatbot
 cd Chatbot
