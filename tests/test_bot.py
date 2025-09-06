@@ -51,5 +51,17 @@ class TestRecipeBot(unittest.TestCase):
         response = process_message(message)
         self.assertIn("Quesadilla", response)
 
+    def test_08_generic_fallback(self):
+        """Test for the generic fallback message when no recipe is found and the message has no "I have" pattern."""
+        message = "What can I make with apples and grapes?"
+        response = process_message(message)
+        self.assertIn("Sorry, I couldn't find a recipe", response)
+    
+    def test_09_incomplete_recipe(self):
+        """Test that a recipe is not found when key ingredients are missing."""
+        message = "I have chicken and rice"
+        response = process_message(message)
+        self.assertIn("not sure what to make", response)
+
 if __name__ == '__main__':
     unittest.main()
