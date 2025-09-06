@@ -28,5 +28,33 @@ Follow these steps to get the bot running on your own server.
 ### 2. Clone the Repository
 
 ```bash
-git clone https://github.com/marchel-24/Chatbot
-cd Chatbot
+git clone [https://github.com/marchel-24/Chatbot](https://github.com/marchel-24/Chatbot)
+cd quick-recipe-bot
+```
+
+### 3. Configuration
+The bot uses a .env file to securely store your Discord bot token.
+
+- Create a file named .env in the root of the project folder.
+
+- Add your Discord bot token to this file in the following format, replacing your_token_here with your actual token:
+
+```bash
+DISCORD_TOKEN=your_token_here
+```
+For reference, an example .env.example file is included in the repository.
+
+### 4. Install Dependencies
+Install the required Python libraries using pip.
+
+```Bash
+
+pip install -r requirements.txt
+
+```
+5. Run the Bot
+Once the dependencies are installed and the .env file is configured, you can start the bot.
+```Bash
+
+python your_bot_file.py
+```
