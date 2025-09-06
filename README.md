@@ -29,4 +29,4 @@ Follow these steps to get the bot running on your own server.
 
 ```bash
 git clone [https://github.com/marchel-24/Chatbot](https://github.com/marchel-24/Chatbot)
-cd quick-recipe-bot
+cd Chatbot
