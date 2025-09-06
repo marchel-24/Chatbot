@@ -3,23 +3,16 @@ import os
 import re
 from dotenv import load_dotenv
 
-# =================================================================================
-# SECTION 1: BOT CONFIGURATION & DATA
-# =================================================================================
-
-# Load environment variables from .env file
+#Configuration
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-# Define pronoun reflection rules
 reflections = {
     "i": "you", "am": "are", "was": "were", "my": "your",
     "mine": "yours", "me": "you", "i've": "you have", "i have": "you have"
 }
 
-# --- Recipe Database ---
-# Each recipe has a name, a regex pattern to match ingredients, and a response.
-# The `re.IGNORECASE` flag makes the patterns case-insensitive.
+#Recipe Database
 recipes = [
     {
         "name": "Stir-fry",
@@ -48,10 +41,7 @@ recipes = [
     }
 ]
 
-# =================================================================================
-# SECTION 2: CORE LOGIC FUNCTIONS
-# =================================================================================
-
+#Functions
 def reflect_pronouns(text):
     """Reflects pronouns in a string using the `reflections` dictionary."""
     words = re.findall(r"[\w']+|[.,!?;]", text.lower())
@@ -70,25 +60,19 @@ def process_message(message):
     Main handler for processing user messages.
     It finds a recipe or provides a fallback response.
     """
-    # 1. Look for a recipe match
+    #1.Find matching recipe
     found_recipe = find_recipe(message)
     if found_recipe:
         return found_recipe["response"]
 
-    # 2. If no recipe, provide a reflective or default fallback
+    #2.If no recipe, provide a reflective or default fallback
     if re.search(r"\bi\b.*\bhave\b", message, re.IGNORECASE):
-        # Acknowledge what the user has, even if no recipe is found
         reflected_input = reflect_pronouns(message)
         return f"{reflected_input}, but I'm not sure what to make with that combination. Can you add another main ingredient like a protein or a vegetable?"
-    
-    # 3. Generic fallback
+    #3.Generic fallback
     return "Sorry, I couldn't find a recipe with those ingredients. Try listing what you have, like 'I have chicken, rice, and broccoli'."
 
-
-# =================================================================================
-# SECTION 3: DISCORD CLIENT INTEGRATION
-# =================================================================================
-
+#Discord Integration
 intents = discord.Intents.default()
 intents.message_content = True
 client = discord.Client(intents=intents)
@@ -102,24 +86,20 @@ async def on_ready():
 @client.event
 async def on_message(message):
     """Event handler for when a message is sent in a channel."""
-    # Ignore messages sent by the bot itself
     if message.author == client.user:
         return
 
-    # Check if the bot was mentioned in the message
     if client.user.mentioned_in(message):
         try:
-            # Clean the message by removing the bot mention
+            #Cleaning mention
             cleaned_message = re.sub(f'<@!?{client.user.id}>', '', message.content).strip()
 
             if not cleaned_message:
                 await message.channel.send("Hello! Tell me what ingredients you have. For example: `@RecipeBot I have chicken, rice, and carrots`")
                 return
 
-            # Process the message and get a response
             response = process_message(cleaned_message)
             
-            # Send the response back to the channel
             await message.channel.send(response)
 
         except Exception as e:
