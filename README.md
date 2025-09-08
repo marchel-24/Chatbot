@@ -2,6 +2,10 @@
 
 A rule-based Discord chatbot that helps users find simple recipes based on the ingredients they have on hand.
 
+## Our Tim 🧑‍💻
+- Marchel Rianra Glendrikho Simanjuntak (22/494013/TK/54157)
+- Brian Tirafi Aufauzan (22/497916/TK/54592)
+
 ## Background: The Problem This Bot Solves
 
 In a world full of complex recipe websites and cooking shows, deciding what to make for dinner can lead to "analysis paralysis." Many people have a few ingredients in their fridge but lack the inspiration to combine them into a simple meal.
@@ -28,7 +32,7 @@ Follow these steps to get the bot running on your own server.
 ### 2. Clone the Repository
 
 ```bash
-git clone [https://github.com/marchel-24/Chatbot](https://github.com/marchel-24/Chatbot)
+git clone https://github.com/marchel-24/Chatbot
 cd quick-recipe-bot
 ```
 
@@ -52,9 +56,18 @@ Install the required Python libraries using pip.
 pip install -r requirements.txt
 
 ```
-5. Run the Bot
+### 5. Run the Bot
 Once the dependencies are installed and the .env file is configured, you can start the bot.
 ```Bash
 
 python your_bot_file.py
 ```
+
+## Unit Test
+Unit test can be found in ./tests folder. To run the program, can use with this command
+
+```Bash
+python -m unittest discover tests
+```
+
+## Demo
