@@ -32,18 +32,18 @@ This often leads to **decision fatigue** or even wasted food.
 
 ## ⚙️ Setup & Installation  
 
-### 1️ Prerequisites  
+### 1️⃣ Prerequisites  
 - Python **3.8 or newer**  
 - A [Discord Bot Token](https://discord.com/developers/applications)  
 
-### 2️ Clone the Repository  
+### 2️⃣ Clone the Repository  
 
 ```bash
 git clone https://github.com/marchel-24/Chatbot
 cd quick-recipe-bot
 ```
 
-### 3. Configuration
+### 3️⃣ Configuration
 The bot uses a .env file to securely store your Discord bot token.
 
 - Create a file named .env in the root of the project folder.
@@ -55,7 +55,7 @@ DISCORD_TOKEN=your_token_here
 ```
 For reference, an example .env.example file is included in the repository.
 
-### 4. Install Dependencies
+### 4️⃣ Install Dependencies
 Install the required Python libraries using pip.
 
 ```Bash
@@ -63,7 +63,7 @@ Install the required Python libraries using pip.
 pip install -r requirements.txt
 
 ```
-### 5. Run the Bot
+### 5️⃣ Run the Bot
 Once the dependencies are installed and the .env file is configured, you can start the bot.
 ```Bash
 
@@ -78,8 +78,10 @@ python -m unittest discover tests
 ```
 
 ## Demo
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0da48e4e-7316-4360-a825-d7f409ef2665" width="80%" alt="Demo GIF"/>
+</p>
 
-
-
+## Tools
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)  
 ![Discord](https://img.shields.io/badge/Discord-Bot-7289DA?logo=discord&logoColor=white)  
