@@ -1,35 +1,42 @@
-# Quick Recipe Finder Bot
+# 🍳 Quick Recipe Finder Bot  
 
-A rule-based Discord chatbot that helps users find simple recipes based on the ingredients they have on hand.
+A **rule-based Discord chatbot** that helps you find **simple recipes** based on the ingredients you already have.  
 
-## Our Team 🧑‍💻
-- Marchel Rianra Glendrikho Simanjuntak (22/494013/TK/54157)
-- Brian Tirafi Aufauzan (22/497916/TK/54592)
+---
 
-## Background: The Problem This Bot Solves
+## 👨‍💻 Our Team  
+- **Marchel Rianra Glendrikho Simanjuntak** (22/494013/TK/54157)  
+- **Brian Tirafi Aufauzan** (22/497916/TK/54592)  
 
-In a world full of complex recipe websites and cooking shows, deciding what to make for dinner can lead to "analysis paralysis." Many people have a few ingredients in their fridge but lack the inspiration to combine them into a simple meal.
+---
 
-The *Quick Recipe Finder Bot* solves this by providing immediate, simple recipe suggestions. It cuts through the noise of detailed, multi-step recipes and empowers users to quickly create a meal with what they already have, reducing food waste and decision fatigue.
+## 🌍 Background: Why This Bot?  
 
-## Features
+We’ve all been there—**hungry, tired, and staring at random ingredients in the fridge**.  
+Recipe websites? Too many steps. Cooking shows? Too complicated.  
+This often leads to **decision fatigue** or even wasted food.  
 
--   *Ingredient-Based Suggestions*: Finds recipes by matching the ingredients you list.
--   *Regex-Powered*: Uses regular expressions for flexible and powerful matching.
--   *Pronoun Reflection*: Engages in simple, natural conversation (e.g., "I have..." -> "You have...").
--   *Simple & Fast*: Designed to give you a meal idea in seconds.
--   *Discord Integration*: Easy to add to any Discord server.
+✨ *Quick Recipe Finder Bot* is here to help! It instantly gives you **simple meal ideas** based on the ingredients you already have—cutting through complexity and helping you cook smarter.  
 
-## Setup and Installation
+---
 
-Follow these steps to get the bot running on your own server.
+## 🚀 Features  
 
-### 1. Prerequisites
+✅ **Ingredient-Based Suggestions** – Finds recipes that match what you list.  
+✅ **Regex-Powered** – Smart ingredient matching.  
+✅ **Pronoun Reflection** – Natural chat experience (e.g., "I have..." → "You have...").  
+✅ **Simple & Fast** – Get meal ideas in seconds.  
+✅ **Discord Integration** – Add it easily to your server.  
 
--   Python 3.8 or newer
--   A Discord Bot Token. You can create a bot and get a token from the [Discord Developer Portal](https://discord.com/developers/applications).
+---
 
-### 2. Clone the Repository
+## ⚙️ Setup & Installation  
+
+### 1️ Prerequisites  
+- Python **3.8 or newer**  
+- A [Discord Bot Token](https://discord.com/developers/applications)  
+
+### 2️ Clone the Repository  
 
 ```bash
 git clone https://github.com/marchel-24/Chatbot
@@ -71,3 +78,8 @@ python -m unittest discover tests
 ```
 
 ## Demo
+
+
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)  
+![Discord](https://img.shields.io/badge/Discord-Bot-7289DA?logo=discord&logoColor=white)  
