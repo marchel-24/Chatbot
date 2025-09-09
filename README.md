@@ -2,7 +2,7 @@
 
 A rule-based Discord chatbot that helps users find simple recipes based on the ingredients they have on hand.
 
-## Our Tim 🧑‍💻
+## Our Team 🧑‍💻
 - Marchel Rianra Glendrikho Simanjuntak (22/494013/TK/54157)
 - Brian Tirafi Aufauzan (22/497916/TK/54592)
 
