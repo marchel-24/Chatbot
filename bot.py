@@ -4,6 +4,25 @@ import re
 import random
 from dotenv import load_dotenv
 from recipe_bot import recipes   # <-- Import recipes here
+import logging
+from logging.handlers import RotatingFileHandler
+
+# Create logs directory if it doesn't exist
+if not os.path.exists('logs'):
+    os.makedirs('logs')
+
+# Configure the logger
+log_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s - %(message)s')
+log_handler = RotatingFileHandler(
+    'logs/bot.log', 
+    maxBytes=1024*1024, # 1 MB
+    backupCount=5
+)
+log_handler.setFormatter(log_formatter)
+
+logger = logging.getLogger('recipe_bot')
+logger.setLevel(logging.INFO)
+logger.addHandler(log_handler)
 
 # Configuration
 load_dotenv()
@@ -85,6 +104,7 @@ async def on_message(message):
 
     if client.user.mentioned_in(message):
         try:
+            logger.info(f"Received mention from '{message.author}' in channel '{message.channel}'. Message: '{message.content}'")
             cleaned_message = re.sub(f'<@!?{client.user.id}>', '', message.content).strip()
 
             if not cleaned_message:
@@ -92,17 +112,21 @@ async def on_message(message):
                 return
 
             response = process_message(cleaned_message)
+            logger.info(f"Sending response to '{message.channel}': {response}")
             await message.channel.send(response)
 
         except Exception as e:
             print(f"An error occurred: {e}")
+            logger.exception("An unhandled error occurred in on_message")
             await message.channel.send("Oops! Something went wrong in the kitchen. Please try again.")
 
 def run_bot():
     if TOKEN:
+        logger.info("Starting bot...")
         client.run(TOKEN)
     else:
         print("ERROR: DISCORD_TOKEN not found. Please set it in your .env file.")
+        logger.error("FATAL: DISCORD_TOKEN not found. Please set it in your .env file.")
 
 if __name__ == "__main__":
     run_bot()

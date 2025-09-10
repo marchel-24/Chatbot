@@ -1,0 +1,4 @@
+2025-09-10 11:34:54,721 - INFO - recipe_bot - Starting bot...
+2025-09-10 11:35:12,351 - INFO - recipe_bot - Received mention from 'hypopothamus' in channel 'general'. Message: '<@1413840350199676949> hi'
+2025-09-10 11:35:40,417 - INFO - recipe_bot - Received mention from 'hypopothamus' in channel 'general'. Message: '<@1413840350199676949> ?'
+2025-09-10 11:35:40,418 - INFO - recipe_bot - Sending response to 'general': Sorry, I couldn't find a recipe with those ingredients or menu name. Try listing what you have, like 'I have chicken, rice, and broccoli'.
